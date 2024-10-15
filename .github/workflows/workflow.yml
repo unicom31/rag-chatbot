@@ -1,0 +1,13 @@
+name: Staging # 워크플로 Action의 이름
+on:
+  push:
+    branches: [main] #github main 브런치에 푸시 발생 시 실행 ( main 외 다른브런치 이용시 이름변경)
+jobs:
+  staging: #staging이라는 작업
+    name: deploy to staging # 작업의 이름
+    runs-on: ubuntu-latest # 실행될 작업환경을 말함.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3 #체크아웃 받기
+      - name: HelloWorld
+        uses: actions/hello-world-javascript-action@v1 # 헬로월드 찍어보기
